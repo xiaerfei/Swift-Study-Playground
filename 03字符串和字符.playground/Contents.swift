@@ -43,6 +43,18 @@ for index in variableSring.characters.indices {
 variableSring.insert("?", atIndex: variableSring.endIndex)
 variableSring.insertContentsOf(" I am here,where are you ".characters, at: variableSring.endIndex.predecessor())
 
+let range = variableSring.endIndex.advancedBy(-6)..<variableSring.endIndex
+variableSring.removeRange(range)
+
+
+
+
+
+
+
+
+
+
 
 
 
