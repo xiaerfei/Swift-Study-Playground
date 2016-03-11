@@ -25,7 +25,8 @@ shoppingList.append("chilk")
 shoppingList += ["banana"]
 
 shoppingList.insert("apple", atIndex: 0)
-
+shoppingList[2...4] = ["haha","heihei"];
+shoppingList
 shoppingList.removeAtIndex(0)
 //如果我们同时需要每个数据项的值和索引值，可以使用enumerate()方法来进行数组遍历
 
@@ -69,6 +70,40 @@ for gener in favoriteGenres.sort() {
 //字典
 //创建一个空字典
 var numberOfIntegers = [Int:String]()
+numberOfIntegers[0]  = "zore"
+numberOfIntegers
+//如果上下文已经提供了类型信息，我们可以使用空字典字面量来创建一个空字典，记作[:]
+numberOfIntegers = [:]
+
+//用字典字面量创建字典
+
+var airports: [String: String] = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+
+airports = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
+
+//访问和修改字典
+airports["LHR"] = "London"
+
+
+let oldValue = airports.updateValue("update", forKey: "DUBB")
+airports["APL"] = "Apple Internation"
+// APL 现在被移除了
+airports["APL"] = nil
+//indexForKey 返回 optional 类型
+let removeValue = airports.removeAtIndex(airports.indexForKey("DUBB")!)
+
+//字典的遍历
+for (key,value) in airports {
+    print("key = \(key) value = \(value)")
+}
+
+airports
+//如果我们只是需要使用某个字典的键集合或者值集合来作为某个接受Array实例的 API 的参数，可以直接使用keys或者values属性构造一个新数组
+let airportCodes = [String](airports.keys)
+let airportNames = [String](airports.values)
+
+
+
 
 
 
